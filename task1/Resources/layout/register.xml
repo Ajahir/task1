@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="60dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            
+       
+       >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Regis"
+                android:textColor="#5507A8"
+                android:textSize="35dp"
+                android:textStyle="bold"
+               
+            />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ter"
+                android:textColor="#21A0F2"
+                android:textSize="35dp"
+                 android:textStyle="bold"
+               
+            />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="You have already account?"
+       
+                
+                android:textSize="15dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Log in"
+                android:textColor="#EB496A"
+         android:layout_marginLeft="5dp"
+                android:textSize="15dp"
+                android:id="@+id/textView1"/>
+
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_marginRight="40dp"
+        
+         android:layout_marginLeft="40dp"
+        android:layout_marginTop="45dp"
+        android:layout_width="match_parent"
+       android:layout_height="55dp"
+         android:drawablePadding="15dp"
+        android:hint="Enter Name User"
+        android:inputType="textPersonName"
+        android:background="@drawable/broder"
+        android:drawableLeft="@drawable/persons"
+        android:paddingHorizontal="10dp"/>
+    <EditText
+        android:id="@+id/editText2"
+         android:layout_marginRight="40dp"
+        
+         android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="55.0dp"
+        android:ellipsize="start"
+        android:drawablePadding="15dp"
+        android:hint="Enter  Email Address"
+        android:inputType="textEmailAddress"
+        android:background="@drawable/broder"
+        android:drawableLeft="@drawable/mail"
+        android:paddingHorizontal="10dp"
+        />
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_marginRight="40dp"
+        
+         android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+       android:drawablePadding="15dp"
+        android:gravity="center_vertical"
+        android:hint="Enter  Username"
+        android:inputType="text"
+        android:background="@drawable/broder"
+        android:drawableLeft="@drawable/persons"
+        android:paddingHorizontal="10dp"
+        />
+    <EditText
+        android:id="@+id/editText4"
+       android:layout_marginRight="40dp"
+        
+         android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:ellipsize="start"
+         android:drawablePadding="15dp"
+        android:hint="Enter Password"
+        android:inputType="textPassword"
+        android:background="@drawable/broder"
+        android:drawableLeft="@drawable/key"
+        android:paddingHorizontal="10dp"
+        />
+   <com.google.android.material.button.MaterialButton
+        android:text="Register"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:inputType="textCapWords"
+        android:layout_gravity="center"
+        android:id="@+id/button1"
+         android:padding="10dp"
+          app:cornerRadius="50dp"
+         android:backgroundTint="#1d51ee"
+        android:textSize="17dp"
+        android:layout_marginTop="45dp"
+         />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Or Register with"
+            android:textSize="17dp"
+            android:layout_margin="15dp"
+        />
+
+    </LinearLayout>
+
+   <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+       android:gravity="center_horizontal"
+      >
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:src="@drawable/facebook"
+            android:minHeight="10dp"
+            android:minWidth="10dp"
+            android:id="@+id/imageView1"
+            />
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="15dp"
+            android:src="@drawable/google"
+            android:minHeight="10dp"
+            android:minWidth="10dp"
+            android:id="@+id/imageView2"
+            />
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
