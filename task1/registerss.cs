@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace task1
 {
@@ -18,6 +19,8 @@ namespace task1
         private ImageView fb, ig;
         private EditText name, email, user, pass;
         private TextView log;
+      
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -35,6 +38,8 @@ namespace task1
             fb.Click += Fb_Click;
             ig.Click += Ig_Click;
             log.Click += Log_Click;
+           
+
         }
 
         private void Log_Click(object sender, EventArgs e)
@@ -55,22 +60,56 @@ namespace task1
 
         private void Reg_Click(object sender, EventArgs e)
         {
+            bool isEmail = Regex.IsMatch(email.Text, @"^[a-z]([\w]*[\w\.]*(?!\.)@gmail.com)", RegexOptions.IgnoreCase);
+            bool isUser = Regex.IsMatch(user.Text, @"^[a-z-A-Z]*$", RegexOptions.IgnoreCase);
+            bool isName = Regex.IsMatch(name.Text, @"^[a-z-A-Z]*$", RegexOptions.IgnoreCase);
 
-            if (string.IsNullOrEmpty(name.Text)   || string.IsNullOrEmpty(user.Text) || string.IsNullOrEmpty(pass.Text))
+            if (string.IsNullOrEmpty(name.Text)  )
             {
-                Toast.MakeText(this, "enter name data", ToastLength.Short).Show();
+                //Toast.MakeText(this, "enter name data", ToastLength.Short).Show();
+                name.Error = "enter name data";
             }
+            else if (!isName)
+            {
+                name.Error = "digit isnot allow";
+            }
+
+
             else if(string.IsNullOrEmpty(email.Text))
             {
-                Toast.MakeText(this, "enter email data", ToastLength.Short).Show();
+                //Toast.MakeText(this, "enter email data", ToastLength.Short).Show();
+                email.Error = "enter email data";
             }
+         
+            else if(!isEmail)
+            {
+
+                email.Error = "Invalid email address";
+
+            }
+            
+        
+         
+
             else if (string.IsNullOrEmpty(user.Text))
             {
-                Toast.MakeText(this, "enter user data", ToastLength.Short).Show();
+                //Toast.MakeText(this, "enter user data", ToastLength.Short).Show();
+                user.Error = "enter user data";
             }
+            else if (!isUser)
+            {
+                user.Error = "digit isnot allow";
+            }
+
             else if (string.IsNullOrEmpty(pass.Text))
             {
-                Toast.MakeText(this, "enter password data", ToastLength.Short).Show();
+                // Toast.MakeText(this, "enter password data", ToastLength.Short).Show();
+                pass.Error = "enter password data";
+            }
+            else if ((pass.Text.Length) < 8)
+            {
+                //Toast.MakeText(this, "enter password 8 charater ", ToastLength.Short).Show();
+                pass.Error = "cannot allow <8 character  ";
             }
 
             else
@@ -78,6 +117,7 @@ namespace task1
                 StartActivity(typeof(MainActivity));
                 Finish();
             }
+           
         }
     }
 }

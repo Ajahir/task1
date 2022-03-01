@@ -3,6 +3,8 @@ using Android.OS;
 using Android.Runtime;
 using Android.Widget;
 using AndroidX.AppCompat.App;
+using System;
+using System.Text.RegularExpressions;
 
 namespace task1
 {
@@ -23,8 +25,8 @@ namespace task1
             ig = FindViewById<ImageView>(Resource.Id.imageView2);
             forgot = FindViewById<TextView>(Resource.Id.forgot);
             regsiter = FindViewById<TextView>(Resource.Id.textView1);
-            user = FindViewById<EditText>(Resource.Id.editText3);
-            pass = FindViewById<EditText>(Resource.Id.editText4);
+            user = FindViewById<EditText>(Resource.Id.username);
+            pass = FindViewById<EditText>(Resource.Id.password);
             fb.Click += Fb_Click;
             ig.Click += Ig_Click;
             login.Click += Login_Click;
@@ -46,14 +48,27 @@ namespace task1
 
         private void Login_Click(object sender, System.EventArgs e)
         {
+
+            bool isUser = Regex.IsMatch(user.Text, @"^[a-z-A-Z]*$", RegexOptions.IgnoreCase);
             if (string.IsNullOrEmpty(user.Text) )
             {
-                Toast.MakeText(this, "enter user data", ToastLength.Short).Show();
+                // Toast.MakeText(this, "enter user data", ToastLength.Short).Show();
+                user.Error = "enter user data";
+            }
+            else if (!isUser)
+            {
+                user.Error = " digit isnot allow";
             }
             else if(string.IsNullOrEmpty(pass.Text))
             {
-                Toast.MakeText(this, "enter password data", ToastLength.Short).Show();
+                //Toast.MakeText(this, "enter password data", ToastLength.Short).Show();
+                pass.Error = "enter password data";
             }
+            else if((pass.Text.Length)<8)
+           {
+                //Toast.MakeText(this, "enter password 8 charater ", ToastLength.Short).Show();
+                pass.Error = "cannot allow <8 character";
+           }
             else
             {
                 Toast.MakeText(this, "login  successfully", ToastLength.Short).Show();

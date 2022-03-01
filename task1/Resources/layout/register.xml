@@ -24,7 +24,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Regis"
+                android:text="@string/reg"
                 android:textColor="#5507A8"
                 android:textSize="35dp"
                 android:textStyle="bold"
@@ -33,7 +33,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ter"
+                android:text="@string/ter"
                 android:textColor="#21A0F2"
                 android:textSize="35dp"
                  android:textStyle="bold"
@@ -48,7 +48,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="You have already account?"
+                android:text="@string/dont"
        
                 
                 android:textSize="15dp"/>
@@ -69,17 +69,19 @@
     <EditText
         android:id="@+id/editText1"
         android:layout_marginRight="40dp"
-        
+        android:singleLine="true"
          android:layout_marginLeft="40dp"
         android:layout_marginTop="45dp"
         android:layout_width="match_parent"
        android:layout_height="55dp"
          android:drawablePadding="15dp"
-        android:hint="Enter Name User"
+        android:hint="@string/name"
         android:inputType="textPersonName"
         android:background="@drawable/broder"
         android:drawableLeft="@drawable/persons"
-        android:paddingHorizontal="10dp"/>
+        android:paddingHorizontal="10dp"
+         android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+       />
     <EditText
         android:id="@+id/editText2"
          android:layout_marginRight="40dp"
@@ -88,9 +90,9 @@
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="55.0dp"
-        android:ellipsize="start"
+       
         android:drawablePadding="15dp"
-        android:hint="Enter  Email Address"
+        android:hint="@string/emailss"
         android:inputType="textEmailAddress"
         android:background="@drawable/broder"
         android:drawableLeft="@drawable/mail"
@@ -99,37 +101,39 @@
     <EditText
         android:id="@+id/editText3"
         android:layout_marginRight="40dp"
-        
+         android:singleLine="true"
          android:layout_marginLeft="40dp"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="55dp"
        android:drawablePadding="15dp"
         android:gravity="center_vertical"
-        android:hint="Enter  Username"
+        android:hint="@string/user"
         android:inputType="text"
+        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
         android:background="@drawable/broder"
         android:drawableLeft="@drawable/persons"
         android:paddingHorizontal="10dp"
+       
         />
     <EditText
         android:id="@+id/editText4"
        android:layout_marginRight="40dp"
-        
+          android:imeOptions="actionNext"
          android:layout_marginLeft="40dp"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:ellipsize="start"
+       
          android:drawablePadding="15dp"
-        android:hint="Enter Password"
+        android:hint="@string/pass"
         android:inputType="textPassword"
         android:background="@drawable/broder"
         android:drawableLeft="@drawable/key"
         android:paddingHorizontal="10dp"
         />
    <com.google.android.material.button.MaterialButton
-        android:text="Register"
+        android:text="@string/register"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:inputType="textCapWords"
@@ -151,7 +155,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Or Register with"
+            android:text="@string/onregister"
             android:textSize="17dp"
             android:layout_margin="15dp"
         />
@@ -168,8 +172,7 @@
             android:layout_width="60dp"
             android:layout_height="50dp"
             android:src="@drawable/facebook"
-            android:minHeight="10dp"
-            android:minWidth="10dp"
+            
             android:id="@+id/imageView1"
             />
         <ImageView
